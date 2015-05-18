@@ -1,0 +1,6 @@
+---
+- name: restart nginx
+  service: name=nginx state=restarted
+
+- name: add http service
+  firewalld: service=http permanent=true state=enabled immediate=yes

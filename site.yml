@@ -1,0 +1,12 @@
+---
+- name: Install nginx, php-fpm, mariadb, wordpress
+  hosts: wordpress
+  user: root
+  #remote_user: liveuser
+  #sudo: yes
+
+  roles:
+    - nginx
+    - php-fpm
+    - mariadb
+    - wordpress

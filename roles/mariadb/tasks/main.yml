@@ -1,0 +1,10 @@
+---
+- name: Install mariadb
+  yum: name={{ item }} state=present
+  with_items:
+    - mariadb-server
+    - MySQL-python
+  notify: restart mariadb
+
+- name: ensure mariadb is running (and enable it at boot)
+  service: name=mariadb state=started enabled=yes

@@ -1,0 +1,7 @@
+---
+- name: Install php-fpm
+  yum: name=php-fpm state=present
+  notify: restart php-fpm
+
+- name: ensure php-fpm is running (and enable it at boot)
+  service: name=php-fpm state=started enabled=yes
